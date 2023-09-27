@@ -1,4 +1,4 @@
-"string to letters"
+#"string to letters"
 string = "Geeksforgeeks"
 letter = [x for x in string]
 
@@ -7,3 +7,5 @@ def split(word):
          
 string = "geeks"
 print([*string])
+#"length of string"
+ a=len(nums) #nums is a List

@@ -31,6 +31,12 @@ key_value_pairs = zip(keys, values)
 # convert the list of key-value pairs to a dictionary
 my_dict = dict(key_value_pairs)
 
+#sort dictionary by values
+my_dict = {'apple': 3, 'banana': 1, 'cherry': 2}
+
+# Sort the dictionary by values in ascending order
+sorted_dict = dict(sorted(my_dict.items(), key=lambda item: item[1]))
+
 ##Appending to List in Python Dictionary
 dict[sortedStr].append(string)
 #Default Dic

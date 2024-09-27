@@ -1,0 +1,32 @@
+from collections import deque
+
+def maxDifSlidingWindow(nums, k) :# 2 monotonic queues
+    res = []
+    q = deque()
+    qmin=deque()
+    for idx, num in enumerate(nums):
+        #print(idx)
+        #print(q)
+        #print(qmin)
+        # Maintain the deque in descending order
+        while q and q[-1] < num:
+            q.pop()
+        q.append(num)
+        while qmin and qmin[-1]>num:
+            qmin.pop()
+        qmin.append(num)
+        # Remove the elements which are out of this window
+        if idx >= k: 
+            if nums[idx - k] == q[0]:
+                q.popleft()
+            if nums[idx-k]==qmin[0]:
+                qmin.popleft()
+        # Append the maximum of the current window to the result
+        if idx >= k - 1:
+            res.append(q[0]-qmin[0])
+    
+    return (max(res))
+
+nums=[30, 28, 30, 29, 32, 26, 27, 30, 28, 33]
+k=6
+print(maxDifSlidingWindow(nums, k))

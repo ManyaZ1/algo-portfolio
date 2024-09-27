@@ -1,5 +1,5 @@
 from collections import deque
-
+#return max absolute difference
 def maxDifSlidingWindow(nums, k) :# 2 monotonic queues
     res = []
     q = deque()

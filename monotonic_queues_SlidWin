@@ -32,7 +32,7 @@ def parser(i):
         nums=list(map(float,my_file.readline().split()))
     return length,window,nums
 
-def maxDifSlidingWindow(nums, k) :#2monotonic queues
+def maxDifSlidingWindow(nums, k) :
     res = []
     qmin=deque()
     maxdif=0
